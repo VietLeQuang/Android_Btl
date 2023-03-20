@@ -10,7 +10,7 @@
         app:layout_constraintBaseline_toTopOf="parent"
         android:text="Đăng kí"
         android:textSize="25dp"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/purple_500"
         android:gravity="center"
         android:padding="5dp"
         android:layout_marginTop="10dp"
@@ -116,7 +116,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btndangki"
         app:layout_constraintTop_toBottomOf="@id/line5"
-        android:background="@color/teal_700"
+        android:background="@color/purple_500"
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"

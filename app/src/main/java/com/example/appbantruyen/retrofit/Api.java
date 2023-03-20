@@ -25,4 +25,10 @@ public interface Api {
             @Field("email") String email,
             @Field("pass") String pass
     );
+    //Post du lieu quen mat khau
+    @POST("reset.php")
+    @FormUrlEncoded
+    Observable<UserModel> resetPass(
+            @Field("email") String email
+    );
 }

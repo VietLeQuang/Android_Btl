@@ -23,7 +23,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DangNhapActivity extends AppCompatActivity {
 
-    TextView txtdangki;
+    TextView txtdangki,txtresetpass;
     EditText email,pass;
     AppCompatButton btndangnhap;
     Api apidangnhap;
@@ -37,10 +37,19 @@ public class DangNhapActivity extends AppCompatActivity {
     }
 
     private void initController() {
+        //dang ki
         txtdangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), DangKiActivity.class);
+                startActivity(intent);
+            }
+        });
+        //quen mat khau
+        txtresetpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ResetPassActivity.class);
                 startActivity(intent);
             }
         });
@@ -69,7 +78,6 @@ public class DangNhapActivity extends AppCompatActivity {
                                             Utils.user_current = userModel.getResult().get(0);  //lay phan tu dau tien cua cai list
                                             Intent intent = new Intent(getApplicationContext(),SplashActivity.class);
                                             startActivity(intent);
-                                            Toast.makeText(getApplication(),"Đăng nhập thành công", Toast.LENGTH_LONG).show();
                                             finish();
                                         }
                                     },
@@ -88,6 +96,7 @@ public class DangNhapActivity extends AppCompatActivity {
         Paper.init(this);
         apidangnhap = RetrofitClient.getInstance(Utils.BASE_URL).create(Api.class);
         txtdangki = findViewById(R.id.txtdangki);
+        txtresetpass = findViewById(R.id.txtresetpass);
         email = findViewById(R.id.email);
         pass = findViewById(R.id.pass);
         btndangnhap = findViewById(R.id.btndangnhap);
