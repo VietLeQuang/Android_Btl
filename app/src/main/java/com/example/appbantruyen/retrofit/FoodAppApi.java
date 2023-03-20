@@ -1,6 +1,7 @@
 package com.example.appbantruyen.retrofit;
 
 import com.example.appbantruyen.model.CategoryModel;
+import com.example.appbantruyen.model.MealDetailModel;
 import com.example.appbantruyen.model.MealModel;
 
 import retrofit2.Call;
@@ -16,5 +17,11 @@ public interface FoodAppApi {
     @FormUrlEncoded
     Call<MealModel> getMeals(
             @Field("idcate") int idcate
+    );
+
+    @POST("mealdetail.php")
+    @FormUrlEncoded
+    Call<MealDetailModel> getMealsDetail(
+            @Field("id") int id
     );
 }

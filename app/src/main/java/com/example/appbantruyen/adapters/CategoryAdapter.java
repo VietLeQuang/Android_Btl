@@ -9,13 +9,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.appbantruyen.databinding.ItemCategoryBinding;
+import com.example.appbantruyen.listener.CategoryListener;
 import com.example.appbantruyen.model.Category;
 
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
     List<Category> list;
+    private CategoryListener listener;
 
+    public CategoryAdapter(List<Category> list, CategoryListener listener) {
+        this.list = list;
+        this.listener = listener;
+    }
 
     public CategoryAdapter(List<Category> list) {
         this.list = list;
@@ -51,6 +57,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         public void setBinding(Category category)
         {
             binding.setTengido(category);
+            binding.executePendingBindings();
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onCategoryClick(category);
+                }
+            });
         }
     }
 }
