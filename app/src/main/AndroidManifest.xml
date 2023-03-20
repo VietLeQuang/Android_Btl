@@ -20,6 +20,20 @@
 
 
         <activity
+            android:name=".activities.ShowDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.CategoryActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.DangNhapActivity"
             android:exported="true">
             <intent-filter>
@@ -35,6 +49,7 @@
         <activity
             android:name=".activities.ResetPassActivity"
             android:exported="true">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -10,12 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.appbantruyen.databinding.ItemPopularBinding;
+import com.example.appbantruyen.listener.EventClickListener;
 import com.example.appbantruyen.model.Meals;
 
 import java.util.List;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHolder>{
     private List<Meals> list;
+    private EventClickListener listener;
+
+    public PopularAdapter(List<Meals> list, EventClickListener listener) {
+        this.list = list;
+        this.listener = listener;
+    }
+
     public PopularAdapter(List<Meals> list){
         this.list=list;
     }
@@ -48,7 +56,13 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHo
         }
         private void setBinding(Meals meals){
             binding.setPopular(meals);
-            binding.executePendingBindings();;
+            binding.executePendingBindings();
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onPopularClick(meals);
+                }
+            });
         }
     }
 }
