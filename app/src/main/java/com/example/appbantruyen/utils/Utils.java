@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Utils {
 
-    public static final String BASE_URL ="http://192.168.232.170/dulieu/";
+    public static final String BASE_URL ="http://192.168.1.12/dulieu/";
 
     public  static User user_current = new User();
 

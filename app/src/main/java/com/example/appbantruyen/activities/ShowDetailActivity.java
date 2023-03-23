@@ -17,6 +17,7 @@ import com.example.appbantruyen.model.MealDetail;
 import com.example.appbantruyen.utils.Utils;
 import com.example.appbantruyen.viewModel.ShowDetailViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.paperdb.Paper;
@@ -91,18 +92,23 @@ public class ShowDetailActivity extends AppCompatActivity {
     {
         boolean checkExit = false;
         int n = 0;
-        if(Utils.cartList.size() > 0)
-        {
-            for(int i = 0; i < Utils.cartList.size(); i++)
+        if (Utils.cartList != null){
+            if(Utils.cartList.size() > 0)
             {
-                if(Utils.cartList.get(i).getMealDetail().getId() == mealDetail.getId())
+                for(int i = 0; i < Utils.cartList.size(); i++)
                 {
-                    checkExit = true;
-                    n = i;
-                    break;
+                    if(Utils.cartList.get(i).getMealDetail().getId() == mealDetail.getId())
+                    {
+                        checkExit = true;
+                        n = i;
+                        break;
+                    }
                 }
             }
+        }else {
+            Utils.cartList = new ArrayList<>();
         }
+
 
         if(checkExit)
         {

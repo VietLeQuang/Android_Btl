@@ -13,6 +13,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.appbantruyen.R;
@@ -56,8 +57,6 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
         try {
             initView();
             initData();
-
-
         }catch (NullPointerException ex){
             System.out.println("Exception in NPE1()" + ex);
         }
@@ -83,6 +82,14 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
         binding.rcPopular.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager1=new GridLayoutManager(this,3);
         binding.rcPopular.setLayoutManager(layoutManager1);
+
+        binding.floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cart = new Intent(getApplicationContext(), CartActivity.class);
+                startActivity(cart);
+            }
+        });
     }
 
     private void initData() {
