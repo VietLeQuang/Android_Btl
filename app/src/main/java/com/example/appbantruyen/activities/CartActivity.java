@@ -96,7 +96,7 @@ public class CartActivity extends AppCompatActivity {
                 item = item + Utils.cartList.get(i).getAmount();
             }
             for (int i = 0 ;i < Utils.cartList.size(); i++){
-                price = price + (Utils.cartList.get(i).getAmount() * Utils.cartList.get(i).getMealDetail().getPrice());
+                price = price + (Utils.cartList.get(i).getAmount() * Utils.cartList.get(i).getBookDetail().getPrice());
             }
         }
         binding.txtitem.setText(String.valueOf(item));

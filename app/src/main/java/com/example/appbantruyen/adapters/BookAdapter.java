@@ -1,6 +1,7 @@
 package com.example.appbantruyen.adapters;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.appbantruyen.databinding.ItemBookBinding;
+import com.example.appbantruyen.listener.EventClickListener;
 import com.example.appbantruyen.model.Books;
 
 import java.util.List;
@@ -15,10 +17,12 @@ import java.util.List;
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder>
 {
     private List<Books> booksList;
+    private EventClickListener listener;
 
 
-    public BookAdapter(List<Books> booksList) {
+    public BookAdapter(List<Books> booksList, EventClickListener listener) {
         this.booksList = booksList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -50,7 +54,12 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder>
         {
             binding.setBookitem(books);
             binding.executePendingBindings();
-
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   listener.onPopularClick(books);
+                }
+            });
         }
     }
 }

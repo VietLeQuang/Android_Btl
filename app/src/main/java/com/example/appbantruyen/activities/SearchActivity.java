@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.appbantruyen.R;
 import com.example.appbantruyen.adapters.SearchAdapter;
 import com.example.appbantruyen.databinding.ActivitySearchBinding;
+import com.example.appbantruyen.listener.EventClickListener;
 import com.example.appbantruyen.listener.SearchListener;
 import com.example.appbantruyen.model.Books;
 import com.example.appbantruyen.retrofit.Api;
@@ -100,14 +101,16 @@ public class SearchActivity extends AppCompatActivity implements SearchListener 
     }
     @Override
     public void onSearchClick(Books search) {
-        Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
-        intent.putExtra("idcate", search.getId());
+        Intent intent = new Intent(getApplicationContext(), ShowDetailActivity.class);
+        intent.putExtra("id", search.getIdBook());
         startActivity(intent);
     }
+
 
     @Override
     protected void onDestroy() {
         compositeDisposable.clear();
         super.onDestroy();
     }
+
 }
