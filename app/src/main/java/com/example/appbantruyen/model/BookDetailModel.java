@@ -2,10 +2,10 @@ package com.example.appbantruyen.model;
 
 import java.util.List;
 
-public class MealDetailModel {
+public class BookDetailModel {
     private boolean success;
     private String message;
-    private List<MealDetail> result;
+    private List<BookDetail> result;
 
     public boolean isSuccess() {
         return success;
@@ -23,11 +23,11 @@ public class MealDetailModel {
         this.message = message;
     }
 
-    public List<MealDetail> getResult() {
+    public List<BookDetail> getResult() {
         return result;
     }
 
-    public void setResult(List<MealDetail> result) {
+    public void setResult(List<BookDetail> result) {
         this.result = result;
     }
 }

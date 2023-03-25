@@ -3,20 +3,20 @@ package com.example.appbantruyen.viewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.appbantruyen.model.MealModel;
-import com.example.appbantruyen.reponsitory.MealRepository;
+import com.example.appbantruyen.model.BookModel;
+import com.example.appbantruyen.reponsitory.BookRepository;
 
 public class CategoryViewModel extends ViewModel
 {
-    private MealRepository mealRepository;
+    private BookRepository bookRepository;
 
     public CategoryViewModel()
     {
-        mealRepository = new MealRepository();
+        bookRepository = new BookRepository();
     }
 
-    public MutableLiveData<MealModel> mealModelMutableLiveData(int idcate)
+    public MutableLiveData<BookModel> mealModelMutableLiveData(int idcate)
     {
-        return mealRepository.getMeals(idcate);
+        return bookRepository.getBooks(idcate);
     }
 }

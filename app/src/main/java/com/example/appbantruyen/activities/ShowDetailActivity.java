@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.example.appbantruyen.R;
 import com.example.appbantruyen.databinding.ActivityShowDetailBinding;
 import com.example.appbantruyen.model.Cart;
-import com.example.appbantruyen.model.MealDetail;
+import com.example.appbantruyen.model.BookDetail;
 import com.example.appbantruyen.utils.Utils;
 import com.example.appbantruyen.viewModel.ShowDetailViewModel;
 
@@ -27,7 +27,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     ShowDetailViewModel viewModel;
     ActivityShowDetailBinding binding;
     int amount = 1;
-    MealDetail mealDetail;
+    BookDetail bookDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +97,7 @@ public class ShowDetailActivity extends AppCompatActivity {
             {
                 for(int i = 0; i < Utils.cartList.size(); i++)
                 {
-                    if(Utils.cartList.get(i).getMealDetail().getId() == mealDetail.getId())
+                    if(Utils.cartList.get(i).getMealDetail().getId() == bookDetail.getId())
                     {
                         checkExit = true;
                         n = i;
@@ -117,7 +117,7 @@ public class ShowDetailActivity extends AppCompatActivity {
         else
         {
             Cart cart = new Cart();
-            cart.setMealDetail(mealDetail);
+            cart.setMealDetail(bookDetail);
             cart.setAmount(amount);
             Utils.cartList.add(cart);
         }
@@ -132,12 +132,12 @@ public class ShowDetailActivity extends AppCompatActivity {
         viewModel.mealDetailModelMutableLiveData(id).observe(this, mealDetailModel -> {
             if(mealDetailModel.isSuccess())
             {
-                mealDetail = mealDetailModel.getResult().get(0);
+                bookDetail = mealDetailModel.getResult().get(0);
                 Log.d("log", mealDetailModel.getResult().get(0).getMeal());
-                binding.txtnamefood.setText(mealDetail.getMeal());
-                binding.txtprice.setText("$"+mealDetail.getPrice());
-                binding.txtdesc.setText(mealDetail.getInstructions());
-                Glide.with(this).load(mealDetail.getStrmealthumb()).into(binding.image);
+                binding.txtnamefood.setText(bookDetail.getMeal());
+                binding.txtprice.setText("$"+ bookDetail.getPrice());
+                binding.txtdesc.setText(bookDetail.getInstructions());
+                Glide.with(this).load(bookDetail.getStrmealthumb()).into(binding.image);
 
             }
         });

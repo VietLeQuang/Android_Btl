@@ -1,8 +1,8 @@
 package com.example.appbantruyen.retrofit;
 
 import com.example.appbantruyen.model.CategoryModel;
-import com.example.appbantruyen.model.MealDetailModel;
-import com.example.appbantruyen.model.MealModel;
+import com.example.appbantruyen.model.BookDetailModel;
+import com.example.appbantruyen.model.BookModel;
 import com.example.appbantruyen.model.MessModel;
 
 import retrofit2.Call;
@@ -14,15 +14,15 @@ import retrofit2.http.POST;
 public interface FoodAppApi {
     @GET("category.php")
     Call<CategoryModel> getCategory();
-    @POST("meal.php")
+    @POST("book.php")
     @FormUrlEncoded
-    Call<MealModel> getMeals(
+    Call<BookModel> getBooks(
             @Field("idcate") int idcate
     );
 
-    @POST("mealdetail.php")
+    @POST("bookdetail.php")
     @FormUrlEncoded
-    Call<MealDetailModel> getMealsDetail(
+    Call<BookDetailModel> getBooksDetail(
             @Field("id") int id
     );
 

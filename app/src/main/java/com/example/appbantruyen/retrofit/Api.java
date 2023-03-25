@@ -1,5 +1,6 @@
 package com.example.appbantruyen.retrofit;
 
+import com.example.appbantruyen.model.BookModel;
 import com.example.appbantruyen.model.UserModel;
 
 import io.reactivex.rxjava3.core.Observable;
@@ -30,5 +31,10 @@ public interface Api {
     @FormUrlEncoded
     Observable<UserModel> resetPass(
             @Field("email") String email
+    );
+    @POST("timkiem.php")
+    @FormUrlEncoded
+    Observable<BookModel> search(
+            @Field("search") String search
     );
 }

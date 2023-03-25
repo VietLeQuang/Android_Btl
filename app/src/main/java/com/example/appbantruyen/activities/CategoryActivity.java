@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.appbantruyen.R;
-import com.example.appbantruyen.adapters.MealAdapter;
+import com.example.appbantruyen.adapters.BookAdapter;
 import com.example.appbantruyen.databinding.ActivityCategoryBinding;
 import com.example.appbantruyen.viewModel.CategoryViewModel;
 
@@ -34,7 +34,7 @@ public class CategoryActivity extends AppCompatActivity {
         viewModel.mealModelMutableLiveData(idcate).observe(this, mealModel -> {
             if(mealModel.isSuccess())
             {
-                MealAdapter adapter = new MealAdapter(mealModel.getResult());
+                BookAdapter adapter = new BookAdapter(mealModel.getResult());
                 binding.rcCategory.setAdapter(adapter);
                 binding.tvname.setText(namecate + ":"+ mealModel.getResult().size());
             }

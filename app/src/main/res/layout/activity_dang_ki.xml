@@ -5,12 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.DangKiActivity">
+
+    <ImageView
+        android:id="@+id/imvsignup"
+        android:layout_width="349dp"
+        android:layout_height="193dp"
+        android:layout_margin="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/siginimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/txtdangnhap"
-        app:layout_constraintBaseline_toTopOf="parent"
-        android:text="Đăng kí"
+        app:layout_constraintTop_toBottomOf="@+id/imvsignup"
+        android:text="Sign up"
         android:textSize="25dp"
-        android:textColor="@color/purple_500"
+        android:textStyle="italic"
+        android:textColor="@color/lavender"
         android:gravity="center"
         android:padding="5dp"
         android:layout_marginTop="10dp"
@@ -116,11 +128,11 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btndangki"
         app:layout_constraintTop_toBottomOf="@id/line5"
-        android:background="@color/purple_500"
+        android:background="@color/lavender"
         android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:text="Đăng kí"
+        android:text="Sign up"
         android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

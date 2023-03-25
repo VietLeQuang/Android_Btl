@@ -8,7 +8,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff4b3a">
+        android:background="@color/lavender">
 
         <ImageView
 
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_25sdp"
-            android:text="Food for"
+            android:text="Book for"
             android:textColor="@color/white"
             android:textSize="@dimen/_30ssp"
             android:textStyle="bold"

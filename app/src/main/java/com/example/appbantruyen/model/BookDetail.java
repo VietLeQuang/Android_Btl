@@ -1,6 +1,6 @@
 package com.example.appbantruyen.model;
 
-public class MealDetail {
+public class BookDetail {
     int id;
     String meal, area, category, instructions, strmealthumb;
     double price;

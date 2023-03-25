@@ -3,19 +3,19 @@ package com.example.appbantruyen.viewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.appbantruyen.model.MealDetailModel;
-import com.example.appbantruyen.reponsitory.MealDetailRepository;
+import com.example.appbantruyen.model.BookDetailModel;
+import com.example.appbantruyen.reponsitory.BookDetailRepository;
 
 public class ShowDetailViewModel extends ViewModel {
-    private MealDetailRepository mealDetailRepository;
+    private BookDetailRepository bookDetailRepository;
 
     public ShowDetailViewModel() {
-        mealDetailRepository = new MealDetailRepository();
+        bookDetailRepository = new BookDetailRepository();
 
     }
 
-    public MutableLiveData<MealDetailModel> mealDetailModelMutableLiveData(int id)
+    public MutableLiveData<BookDetailModel> mealDetailModelMutableLiveData(int id)
     {
-        return mealDetailRepository.getMealDetail(id);
+        return bookDetailRepository.getBookDetail(id);
     }
 }

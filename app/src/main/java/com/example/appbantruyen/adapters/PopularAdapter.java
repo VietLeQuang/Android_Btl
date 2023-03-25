@@ -1,6 +1,5 @@
 package com.example.appbantruyen.adapters;
 
-import android.content.ClipData;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,20 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.appbantruyen.databinding.ItemPopularBinding;
 import com.example.appbantruyen.listener.EventClickListener;
-import com.example.appbantruyen.model.Meals;
+import com.example.appbantruyen.model.Books;
 
 import java.util.List;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHolder>{
-    private List<Meals> list;
+    private List<Books> list;
     private EventClickListener listener;
 
-    public PopularAdapter(List<Meals> list, EventClickListener listener) {
+    public PopularAdapter(List<Books> list, EventClickListener listener) {
         this.list = list;
         this.listener = listener;
     }
 
-    public PopularAdapter(List<Meals> list){
+    public PopularAdapter(List<Books> list){
         this.list=list;
     }
 
@@ -38,7 +37,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.setBinding(list.get(position));
-        Glide.with(holder.itemView).load(list.get(position).getStrMealThumb()).into(holder.binding.imgPopular);
+        Glide.with(holder.itemView).load(list.get(position).getStrBookThumb()).into(holder.binding.imgPopular);
     }
 
     @Override
@@ -54,13 +53,13 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHo
             super(binding.getRoot());
             this.binding = binding;
         }
-        private void setBinding(Meals meals){
-            binding.setPopular(meals);
+        private void setBinding(Books books){
+            binding.setPopular(books);
             binding.executePendingBindings();
             binding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onPopularClick(meals);
+                    listener.onPopularClick(books);
                 }
             });
         }

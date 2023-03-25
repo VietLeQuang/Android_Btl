@@ -11,20 +11,16 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
-
 import com.example.appbantruyen.R;
 import com.example.appbantruyen.adapters.CategoryAdapter;
 import com.example.appbantruyen.adapters.PopularAdapter;
 import com.example.appbantruyen.databinding.ActivityHomeBinding;
-import com.example.appbantruyen.databinding.ActivityHomeBindingImpl;
 import com.example.appbantruyen.listener.CategoryListener;
 import com.example.appbantruyen.listener.EventClickListener;
 import com.example.appbantruyen.model.Category;
-import com.example.appbantruyen.model.Meals;
+import com.example.appbantruyen.model.Books;
 import com.example.appbantruyen.retrofit.Api;
 import com.example.appbantruyen.retrofit.RetrofitClient;
 import com.example.appbantruyen.utils.Utils;
@@ -43,6 +39,14 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
+        binding.imgsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         //Kiem tra xem co internet
         apidangnhap = RetrofitClient.getInstance(Utils.BASE_URL).create(Api.class);
         if (isConnected(this)){
@@ -102,9 +106,9 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
                binding.rcCategories.setAdapter(adapter);
             }
         });
-        homeViewModel.mealModelMutableLiveData(1).observe(this,mealModel->{
-            if(mealModel.isSuccess()){
-                PopularAdapter adapter = new PopularAdapter(mealModel.getResult(), this);
+        homeViewModel.bookModelMutableLiveData(1).observe(this,bookModel->{
+            if(bookModel.isSuccess()){
+                PopularAdapter adapter = new PopularAdapter(bookModel.getResult(), this);
                 binding.rcPopular.setAdapter(adapter);
             }
         });
@@ -119,9 +123,9 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
     }
 
     @Override
-    public void onPopularClick(Meals meals) {
+    public void onPopularClick(Books books) {
         Intent intent = new Intent(getApplicationContext(), ShowDetailActivity.class);
-        intent.putExtra("id", meals.getIdMeal());
+        intent.putExtra("id", books.getIdBook());
         startActivity(intent);
     }
 }

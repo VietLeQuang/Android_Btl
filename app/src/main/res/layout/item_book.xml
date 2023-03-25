@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="mealitem"
-            type="com.example.appbantruyen.model.Meals" />
+            name="bookitem"
+            type="com.example.appbantruyen.model.Books" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,17 +21,17 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_5sdp"
-            android:background="@drawable/back_meal"
+            android:background="@drawable/back_book"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tvnamemeal"
+                android:id="@+id/tvnamebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_60sdp"
                 android:gravity="center"
-                android:text="@{mealitem.strMeal}"
+                android:text="@{bookitem.strBook}"
                 android:textColor="@color/teal_700"
                 android:textSize="@dimen/_15ssp"
                 android:textStyle="bold"
@@ -39,7 +39,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/image"
+            android:id="@+id/img_book"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
             android:scaleType="centerCrop"

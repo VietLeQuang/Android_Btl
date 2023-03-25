@@ -1,15 +1,15 @@
 package com.example.appbantruyen.model;
 
 public class Cart {
-    private MealDetail mealDetail;
+    private BookDetail bookDetail;
     private int amount;
 
-    public MealDetail getMealDetail() {
-        return mealDetail;
+    public BookDetail getMealDetail() {
+        return bookDetail;
     }
 
-    public void setMealDetail(MealDetail mealDetail) {
-        this.mealDetail = mealDetail;
+    public void setMealDetail(BookDetail bookDetail) {
+        this.bookDetail = bookDetail;
     }
 
     public int getAmount() {

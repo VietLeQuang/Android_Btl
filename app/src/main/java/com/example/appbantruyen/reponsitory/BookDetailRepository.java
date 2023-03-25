@@ -4,9 +4,7 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.appbantruyen.model.MealDetail;
-import com.example.appbantruyen.model.MealDetailModel;
-import com.example.appbantruyen.model.MealModel;
+import com.example.appbantruyen.model.BookDetailModel;
 import com.example.appbantruyen.retrofit.FoodAppApi;
 import com.example.appbantruyen.retrofit.RetrofitInstance;
 
@@ -14,23 +12,23 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MealDetailRepository {
+public class BookDetailRepository {
     private FoodAppApi appApi;
 
-    public MealDetailRepository() {
+    public BookDetailRepository() {
         appApi = RetrofitInstance.getRetrofit().create(FoodAppApi.class);
     }
-    public MutableLiveData<MealDetailModel> getMealDetail(int id)
+    public MutableLiveData<BookDetailModel> getBookDetail(int id)
     {
-        MutableLiveData<MealDetailModel> data = new MutableLiveData<>();
-        appApi.getMealsDetail(id).enqueue(new Callback<MealDetailModel>() {
+        MutableLiveData<BookDetailModel> data = new MutableLiveData<>();
+        appApi.getBooksDetail(id).enqueue(new Callback<BookDetailModel>() {
             @Override
-            public void onResponse(Call<MealDetailModel> call, Response<MealDetailModel> response) {
+            public void onResponse(Call<BookDetailModel> call, Response<BookDetailModel> response) {
                 data.setValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<MealDetailModel> call, Throwable t) {
+            public void onFailure(Call<BookDetailModel> call, Throwable t) {
                 data.setValue(null);
                 Log.d("log", t.getMessage());
             }

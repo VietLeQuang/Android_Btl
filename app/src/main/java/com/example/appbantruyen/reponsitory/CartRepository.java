@@ -4,7 +4,6 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.appbantruyen.model.MealDetailModel;
 import com.example.appbantruyen.model.MessModel;
 import com.example.appbantruyen.retrofit.FoodAppApi;
 import com.example.appbantruyen.retrofit.RetrofitInstance;
