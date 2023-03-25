@@ -2,7 +2,7 @@ package com.example.appbantruyen.model;
 
 public class BookDetail {
     int id;
-    String meal, area, category, instructions, strmealthumb;
+    String book, area, category, instructions, strbookthumb;
     double price;
 
     public int getId() {
@@ -13,12 +13,12 @@ public class BookDetail {
         this.id = id;
     }
 
-    public String getMeal() {
-        return meal;
+    public String getBook() {
+        return book;
     }
 
-    public void setMeal(String meal) {
-        this.meal = meal;
+    public void setBook(String book) {
+        this.book = book;
     }
 
     public String getArea() {
@@ -45,12 +45,12 @@ public class BookDetail {
         this.instructions = instructions;
     }
 
-    public String getStrmealthumb() {
-        return strmealthumb;
+    public String getStrbookthumb() {
+        return strbookthumb;
     }
 
-    public void setStrmealthumb(String strmealthumb) {
-        this.strmealthumb = strmealthumb;
+    public void setStrbookthumb(String strbookthumb) {
+        this.strbookthumb = strbookthumb;
     }
 
     public double getPrice() {

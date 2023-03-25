@@ -51,7 +51,7 @@ public class ShowDetailActivity extends AppCompatActivity {
         if(Utils.cartList.size() > 0){
             for(int i = 0; i < Utils.cartList.size(); i++)
             {
-                if(Utils.cartList.get(i).getMealDetail().getId() == id)
+                if(Utils.cartList.get(i).getBookDetail().getId() == id)
                 {
                     binding.tvamount.setText(Utils.cartList.get(i).getAmount() + "");
                 }
@@ -97,7 +97,7 @@ public class ShowDetailActivity extends AppCompatActivity {
             {
                 for(int i = 0; i < Utils.cartList.size(); i++)
                 {
-                    if(Utils.cartList.get(i).getMealDetail().getId() == bookDetail.getId())
+                    if(Utils.cartList.get(i).getBookDetail().getId() == bookDetail.getId())
                     {
                         checkExit = true;
                         n = i;
@@ -117,7 +117,7 @@ public class ShowDetailActivity extends AppCompatActivity {
         else
         {
             Cart cart = new Cart();
-            cart.setMealDetail(bookDetail);
+            cart.setBookDetail(bookDetail);
             cart.setAmount(amount);
             Utils.cartList.add(cart);
         }
@@ -129,15 +129,15 @@ public class ShowDetailActivity extends AppCompatActivity {
     private void getData(int id)
     {
         viewModel = new ViewModelProvider(this).get(ShowDetailViewModel.class);
-        viewModel.mealDetailModelMutableLiveData(id).observe(this, mealDetailModel -> {
-            if(mealDetailModel.isSuccess())
+        viewModel.bookDetailModelMutableLiveData(id).observe(this, bookDetailModel -> {
+            if(bookDetailModel.isSuccess())
             {
-                bookDetail = mealDetailModel.getResult().get(0);
-                Log.d("log", mealDetailModel.getResult().get(0).getMeal());
-                binding.txtnamefood.setText(bookDetail.getMeal());
+                bookDetail = bookDetailModel.getResult().get(0);
+                Log.d("log", bookDetailModel.getResult().get(0).getBook());
+                binding.txtnamefood.setText(bookDetail.getBook());
                 binding.txtprice.setText("$"+ bookDetail.getPrice());
                 binding.txtdesc.setText(bookDetail.getInstructions());
-                Glide.with(this).load(bookDetail.getStrmealthumb()).into(binding.image);
+                Glide.with(this).load(bookDetail.getStrbookthumb()).into(binding.image);
 
             }
         });
