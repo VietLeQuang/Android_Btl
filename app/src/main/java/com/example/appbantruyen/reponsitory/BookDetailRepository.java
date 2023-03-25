@@ -5,18 +5,19 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.appbantruyen.model.BookDetailModel;
-import com.example.appbantruyen.retrofit.FoodAppApi;
-import com.example.appbantruyen.retrofit.RetrofitInstance;
+import com.example.appbantruyen.retrofit.Api;
+import com.example.appbantruyen.retrofit.RetrofitClient;
+import com.example.appbantruyen.utils.Utils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BookDetailRepository {
-    private FoodAppApi appApi;
+    private Api appApi;
 
     public BookDetailRepository() {
-        appApi = RetrofitInstance.getRetrofit().create(FoodAppApi.class);
+        appApi = RetrofitClient.getInstance(Utils.BASE_URL).create(Api.class);
     }
     public MutableLiveData<BookDetailModel> getBookDetail(int id)
     {

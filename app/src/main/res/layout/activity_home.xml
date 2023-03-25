@@ -117,7 +117,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <TextView
                     android:id="@+id/tvcategoies"
-                    android:text="Recomend for You"
+                    android:text="Category"
                     android:textSize="@dimen/_15ssp"
                     android:textColor="@color/black"
                     android:textStyle="bold"

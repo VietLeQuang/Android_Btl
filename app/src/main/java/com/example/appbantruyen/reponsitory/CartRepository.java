@@ -5,19 +5,20 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.appbantruyen.model.MessModel;
-import com.example.appbantruyen.retrofit.FoodAppApi;
-import com.example.appbantruyen.retrofit.RetrofitInstance;
+import com.example.appbantruyen.retrofit.Api;
+import com.example.appbantruyen.retrofit.RetrofitClient;
+import com.example.appbantruyen.utils.Utils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CartRepository {
-    private FoodAppApi api;
+    private Api api;
     MutableLiveData<MessModel> data;
 
     public CartRepository() {
-        api = RetrofitInstance.getRetrofit().create(FoodAppApi.class);
+        api = RetrofitClient.getInstance(Utils.BASE_URL).create(Api.class);
         data = new MutableLiveData<>();
     }
     public  void checkOut(int iduser, int amount, double total, String detail){

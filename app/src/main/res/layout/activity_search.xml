@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.SearchActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_back"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/lavender"
+            android:text="App bán truyện"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:textSize="@dimen/_20sdp"
+            android:drawableLeft="@drawable/ic_arrow_back">
+
+        </TextView>
+
+
+        <EditText
+            android:id="@+id/editsearch"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_back"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:hint="Search"
+            android:padding="@dimen/_5sdp"
+            android:background="@drawable/back_edit"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.recyclerview.widget.RecyclerView
+            app:layout_constraintTop_toBottomOf="@id/editsearch"
+            app:layout_constraintStart_toStartOf="@id/editsearch"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:id="@+id/rc_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

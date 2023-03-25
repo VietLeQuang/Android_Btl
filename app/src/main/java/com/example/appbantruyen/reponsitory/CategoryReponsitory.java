@@ -4,24 +4,25 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.appbantruyen.model.CategoryModel;
-import com.example.appbantruyen.retrofit.FoodAppApi;
-import com.example.appbantruyen.retrofit.RetrofitInstance;
+import com.example.appbantruyen.retrofit.Api;
+import com.example.appbantruyen.retrofit.RetrofitClient;
+import com.example.appbantruyen.utils.Utils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CategoryReponsitory {
-    private FoodAppApi foodAppApi;
+    private Api bookAppApi;
 
     public CategoryReponsitory()
     {
-        foodAppApi = RetrofitInstance.getRetrofit().create(FoodAppApi.class);
+        bookAppApi = RetrofitClient.getInstance(Utils.BASE_URL).create(Api.class);
     }
     public MutableLiveData<CategoryModel> getCategory()
     {
         MutableLiveData<CategoryModel> data = new MutableLiveData<>();
-        foodAppApi.getCategory().enqueue(new Callback<CategoryModel>() {
+        bookAppApi.getCategory().enqueue(new Callback<CategoryModel>() {
             @Override
             public void onResponse(Call<CategoryModel> call, Response<CategoryModel> response) {
                 data.setValue(response.body());
