@@ -33,9 +33,7 @@ public class CategoryActivity extends AppCompatActivity implements EventClickLis
 
     private void initData()
     {
-        int idcate = getIntent().getIntExtra("idcate", category.getId());
-
-            idcate = getIntent().getIntExtra("idcate", 2);
+        int idcate = getIntent().getIntExtra("idcate", 2);
 
         String namecate = getIntent().getStringExtra("namecate");
         viewModel = new ViewModelProvider(this).get(CategoryViewModel.class);

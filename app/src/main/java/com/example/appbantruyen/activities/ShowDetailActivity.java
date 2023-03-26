@@ -40,14 +40,14 @@ public class ShowDetailActivity extends AppCompatActivity {
         eventClick();
         showToData(id);
 
-        binding.btnadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        //binding.btnadd.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+        //        startActivity(intent);
+        //        finish();
+        //    }
+        //});
     }
 
     private void showToData(int id) {
@@ -95,6 +95,9 @@ public class ShowDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addToCart(amount);
+                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
