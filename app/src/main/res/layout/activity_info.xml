@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.InfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="60dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="10dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/t1"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="15dp"
+            android:text="Lê Đỗ Hồng Tuấn"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+
+        android:layout_height="100dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+
+        app:cardCornerRadius="40dp"
+
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/l" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="15dp"
+            android:text="Nợi Tạ"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+
+        android:layout_height="100dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+
+        app:cardCornerRadius="40dp"
+
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ho" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="15dp"
+            android:text="Hoang hiixu"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+
+        android:layout_height="100dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+
+        app:cardCornerRadius="40dp"
+
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/v" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="15dp"
+            android:text="Eo vì"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+
+        android:layout_height="100dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+
+        app:cardCornerRadius="40dp"
+
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="15dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/h" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="15dp"
+            android:text="Le Hiep"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Giới Thiệu Thành Viên"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

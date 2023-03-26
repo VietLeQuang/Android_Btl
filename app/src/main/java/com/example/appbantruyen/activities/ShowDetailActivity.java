@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,6 +39,15 @@ public class ShowDetailActivity extends AppCompatActivity {
         getData(id);
         eventClick();
         showToData(id);
+
+        binding.btnadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void showToData(int id) {
@@ -122,8 +132,9 @@ public class ShowDetailActivity extends AppCompatActivity {
             Utils.cartList.add(cart);
         }
 
-        Toast.makeText(getApplicationContext(), "Adder to your cart", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Added to your cart", Toast.LENGTH_SHORT).show();
         Paper.book().write("cart", Utils.cartList);
+
     }
 
     private void getData(int id)

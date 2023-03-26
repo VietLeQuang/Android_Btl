@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.example.appbantruyen.R;
 import com.example.appbantruyen.adapters.CartAdapter;
 import com.example.appbantruyen.databinding.ActivityCartBinding;
-import com.example.appbantruyen.databinding.ActivityCartBindingImpl;
+//import com.example.appbantruyen.databinding.ActivityCartBindingImpl;
 import com.example.appbantruyen.listener.ChangeNumListener;
 import com.example.appbantruyen.model.Cart;
 import com.example.appbantruyen.model.MessModel;

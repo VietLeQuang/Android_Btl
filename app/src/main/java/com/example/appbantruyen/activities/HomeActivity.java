@@ -11,7 +11,9 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.example.appbantruyen.R;
 import com.example.appbantruyen.adapters.CategoryAdapter;
@@ -33,7 +35,8 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
     ActivityHomeBinding binding;
     Api apidangnhap;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-
+    LinearLayout rate;
+    LinearLayout info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +82,8 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
     }
 
     private void initView() {
+        info= findViewById(R.id.info);
+        rate = findViewById(R.id.rate);
         binding.rcCategories.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         binding.rcCategories.setLayoutManager(layoutManager);
@@ -92,6 +97,20 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
             public void onClick(View view) {
                 Intent cart = new Intent(getApplicationContext(), CartActivity.class);
                 startActivity(cart);
+            }
+        });
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RateActivity.class);
+                startActivity(intent);
+            }
+        });
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+                startActivity(intent);
             }
         });
     }
