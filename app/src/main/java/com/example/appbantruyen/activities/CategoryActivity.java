@@ -11,13 +11,14 @@ import android.os.Bundle;
 import com.example.appbantruyen.R;
 import com.example.appbantruyen.adapters.BookAdapter;
 import com.example.appbantruyen.databinding.ActivityCategoryBinding;
+import com.example.appbantruyen.model.Category;
 import com.example.appbantruyen.viewModel.CategoryViewModel;
 
 public class CategoryActivity extends AppCompatActivity {
 
     ActivityCategoryBinding binding;
     CategoryViewModel viewModel;
-
+    Category category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void initData()
     {
-        int idcate = getIntent().getIntExtra("idcate", 1);
+        int idcate = getIntent().getIntExtra("idcate", category.getId());
         String namecate = getIntent().getStringExtra("namecate");
         viewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
         viewModel.mealModelMutableLiveData(idcate).observe(this, mealModel -> {
