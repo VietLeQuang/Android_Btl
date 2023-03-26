@@ -15,7 +15,7 @@ public class CategoryViewModel extends ViewModel
         bookRepository = new BookRepository();
     }
 
-    public MutableLiveData<BookModel> mealModelMutableLiveData(int idcate)
+    public MutableLiveData<BookModel> bookModelMutableLiveData(int idcate)
     {
         return bookRepository.getBooks(idcate);
     }

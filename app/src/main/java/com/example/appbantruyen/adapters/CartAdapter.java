@@ -39,9 +39,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Cart cart = cartList.get(position);
-        holder.binding.txtname.setText(cart.getMealDetail().getMeal());
-        Glide.with(context).load(cart.getMealDetail().getStrmealthumb()).into(holder.binding.imageCart);
-        holder.binding.txtprice.setText(cart.getMealDetail().getPrice() + "");
+        holder.binding.txtname.setText(cart.getBookDetail().getBook());
+        Glide.with(context).load(cart.getBookDetail().getStrbookthumb()).into(holder.binding.imageCart);
+        holder.binding.txtprice.setText(cart.getBookDetail().getPrice() + "");
         holder.binding.imagAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         });
 
         holder.binding.txtamount.setText(cart.getAmount() +"");
-        holder.binding.txtprice2.setText("$" + String.valueOf(cart.getAmount() * cart.getMealDetail().getPrice()));
+        holder.binding.txtprice2.setText("$" + String.valueOf(cart.getAmount() * cart.getBookDetail().getPrice()));
     }
 
     private void subToCart(int adapterPosition) {

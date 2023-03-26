@@ -23,9 +23,9 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHo
         this.listener = listener;
     }
 
-    public PopularAdapter(List<Books> list){
-        this.list=list;
-    }
+    //public PopularAdapter(List<Books> list){
+    //    this.list=list;
+    //}
 
     @NonNull
     @Override

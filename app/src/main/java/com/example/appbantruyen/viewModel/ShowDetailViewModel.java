@@ -14,7 +14,7 @@ public class ShowDetailViewModel extends ViewModel {
 
     }
 
-    public MutableLiveData<BookDetailModel> mealDetailModelMutableLiveData(int id)
+    public MutableLiveData<BookDetailModel> bookDetailModelMutableLiveData(int id)
     {
         return bookDetailRepository.getBookDetail(id);
     }

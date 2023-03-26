@@ -115,7 +115,7 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
                binding.rcCategories.setAdapter(adapter);
             }
         });
-        homeViewModel.bookModelMutableLiveData(1).observe(this,bookModel->{
+        homeViewModel.bookModelMutableLiveData(2).observe(this,bookModel->{
             if(bookModel.isSuccess()){
                 PopularAdapter adapter = new PopularAdapter(bookModel.getResult(), this);
                 binding.rcPopular.setAdapter(adapter);

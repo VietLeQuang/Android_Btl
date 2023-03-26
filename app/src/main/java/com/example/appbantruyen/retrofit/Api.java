@@ -44,11 +44,16 @@ public interface Api {
     );
     @GET("category.php")
     Call<CategoryModel> getCategory();
+
+    @GET("popular.php")
+    Call<CategoryModel> getPopular();
+
     @POST("book.php")
     @FormUrlEncoded
     Call<BookModel> getBooks(
             @Field("idcate") int idcate
     );
+
 
     @POST("bookdetail.php")
     @FormUrlEncoded

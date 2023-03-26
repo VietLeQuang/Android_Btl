@@ -4,11 +4,11 @@ public class Cart {
     private BookDetail bookDetail;
     private int amount;
 
-    public BookDetail getMealDetail() {
+    public BookDetail getBookDetail() {
         return bookDetail;
     }
 
-    public void setMealDetail(BookDetail bookDetail) {
+    public void setBookDetail(BookDetail bookDetail) {
         this.bookDetail = bookDetail;
     }
 
