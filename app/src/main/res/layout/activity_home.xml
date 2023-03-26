@@ -202,6 +202,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/exit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -211,13 +212,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_settings" />
+                        android:src="@drawable/ic_logout" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Setting" />
+                        android:text="Exit" />
                 </LinearLayout>
 
                 <LinearLayout

@@ -13,6 +13,7 @@ import com.example.appbantruyen.R;
 import com.example.appbantruyen.adapters.BookAdapter;
 import com.example.appbantruyen.adapters.PopularAdapter;
 import com.example.appbantruyen.databinding.ActivityCategoryBinding;
+import com.example.appbantruyen.model.Category;
 import com.example.appbantruyen.listener.EventClickListener;
 import com.example.appbantruyen.model.Books;
 import com.example.appbantruyen.viewModel.CategoryViewModel;
@@ -21,7 +22,7 @@ public class CategoryActivity extends AppCompatActivity implements EventClickLis
 
     ActivityCategoryBinding binding;
     CategoryViewModel viewModel;
-
+    Category category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,10 @@ public class CategoryActivity extends AppCompatActivity implements EventClickLis
 
     private void initData()
     {
-        int idcate = getIntent().getIntExtra("idcate", 2);
+        int idcate = getIntent().getIntExtra("idcate", category.getId());
+
+            idcate = getIntent().getIntExtra("idcate", 2);
+
         String namecate = getIntent().getStringExtra("namecate");
         viewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
         viewModel.bookModelMutableLiveData(idcate).observe(this, bookModel -> {

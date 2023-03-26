@@ -50,6 +50,15 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
                 finish();
             }
         });
+
+        binding.exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),DangNhapActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         //Kiem tra xem co internet
         apidangnhap = RetrofitClient.getInstance(Utils.BASE_URL).create(Api.class);
         if (isConnected(this)){
